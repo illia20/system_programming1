@@ -14,7 +14,7 @@ public class Main {
         try (BufferedReader bf = new BufferedReader(new FileReader(new File(file)))){
             String line;
             while ((line = bf.readLine()) != null){
-                List<String> wordsInLine = Arrays.asList(line.split("[0-9!@#$%^&*()~?<>;:,.\"'/`\\\n\t\r +-=]", 0));
+                List<String> wordsInLine = Arrays.asList(line.split("[^a-zA-ZА-Яа-яЮюЄєІіЇї]", 0));
                 for (String word : wordsInLine){
                     String current = beautify(word);
                     if(incorrectString(current)){
